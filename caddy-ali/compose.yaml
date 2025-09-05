@@ -1,0 +1,18 @@
+services:
+  caddy:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '8443:8443'
+      - '8443:8443/udp'
+    volumes:
+      - ./conf:/etc/caddy
+      - ./site:/srv
+      - caddy_data:/data
+      - caddy_config:/config
+    environment:
+      - CF_API_TOKEN=${CF_API_TOKEN}
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,15 +1,10 @@
-:80 {
-  root * /srv
-  encode
-  try_files {path} /index.html
-  file_server
+acme_dns cloudflare {env.CF_API_TOKEN}
+
+example.com:8443 {
+  reverse_proxy host.docker.internal:3000
 }
 
-# example.com {
-# 	redir https://www.{host}{uri}
-# }
-
-# www.example.com {
+# example.com:8443 {
 #   encode
 
 #   handle /api/* {

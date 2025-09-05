@@ -1,0 +1,22 @@
+acme_dns alidns {
+  access_key_id {env.ALIYUN_ACCESS_KEY_ID}
+  access_key_secret {env.ALIYUN_ACCESS_KEY_SECRET}
+}
+
+example.com:8443 {
+  reverse_proxy host.docker.internal:3000
+}
+
+# example.com:8443 {
+#   encode
+
+#   handle /api/* {
+#     reverse_proxy host.docker.internal:8000
+#   }
+
+#   handle {
+#     root * /srv
+#     try_files {path} /index.html
+#     file_server
+#   }
+# }
