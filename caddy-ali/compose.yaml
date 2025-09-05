@@ -11,7 +11,8 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     environment:
-      - CF_API_TOKEN=${CF_API_TOKEN}
+      - ALIYUN_ACCESS_KEY_ID=${ALIYUN_ACCESS_KEY_ID}
+      - ALIYUN_ACCESS_KEY_SECRET=${ALIYUN_ACCESS_KEY_SECRET}
 
 volumes:
   caddy_data:
