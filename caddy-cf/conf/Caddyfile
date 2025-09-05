@@ -1,10 +1,16 @@
-acme_dns cloudflare {env.CF_API_TOKEN}
-
 example.com:8443 {
+  tls {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+
   reverse_proxy host.docker.internal:3000
 }
 
 # example.com:8443 {
+#   tls {
+#     dns cloudflare {env.CF_API_TOKEN}
+#   }
+
 #   encode
 
 #   handle /api/* {
