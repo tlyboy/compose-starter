@@ -1,0 +1,10 @@
+services:
+  verdaccio:
+    image: verdaccio/verdaccio
+    restart: unless-stopped
+    ports:
+      - '4873:4873'
+    volumes:
+      - ./conf:/verdaccio/conf
+      - ./plugins:/verdaccio/plugins
+      - ./storage:/verdaccio/storage
