@@ -5,14 +5,16 @@
 ## 安装
 
 ```bash
-npx degit tlyboy/compose-starter/my-project my-project
+# 拉取指定服务模板
+npx degit tlyboy/compose-starter/caddy-cf my-caddy
+npx degit tlyboy/compose-starter/mysql my-mysql
+npx degit tlyboy/compose-starter/redis my-redis
 ```
 
 ## 使用说明
 
 ```bash
-pnpm install
-pnpm dev
+docker compose up -d
 ```
 
 ## 使用许可
