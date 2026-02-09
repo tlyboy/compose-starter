@@ -1,22 +1,22 @@
 # compose-starter
 
-🐋 A collection of Docker Compose configuration templates for quickly starting common services.
+🐋 Docker Compose 配置模板集合，快速启动常用服务。
 
-## Install
+## 安装
 
 ```bash
-# Pull a specific service template
+# 拉取指定服务模板
 npx degit tlyboy/compose-starter/caddy-cf my-caddy
 npx degit tlyboy/compose-starter/mysql my-mysql
 npx degit tlyboy/compose-starter/redis my-redis
 ```
 
-## Usage
+## 使用说明
 
 ```bash
 docker compose up -d
 ```
 
-## License
+## 使用许可
 
 [MIT](https://opensource.org/licenses/MIT) © Guany
