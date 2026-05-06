@@ -1,0 +1,25 @@
+example.com:8443 {
+  tls {
+    dns cloudflare {env.CF_API_TOKEN}
+  }
+
+  reverse_proxy host.docker.internal:3000
+}
+
+# example.com:8443 {
+#   tls {
+#     dns cloudflare {env.CF_API_TOKEN}
+#   }
+
+#   encode
+
+#   handle /api/* {
+#     reverse_proxy host.docker.internal:8000
+#   }
+
+#   handle {
+#     root * /srv
+#     try_files {path} /index.html
+#     file_server
+#   }
+# }

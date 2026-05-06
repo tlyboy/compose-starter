@@ -1,0 +1,24 @@
+:80 {
+  root * /srv
+  encode
+  try_files {path} /index.html
+  file_server
+}
+
+# example.com {
+# 	redir https://www.{host}{uri}
+# }
+
+# www.example.com {
+#   encode
+
+#   handle /api/* {
+#     reverse_proxy host.docker.internal:8000
+#   }
+
+#   handle {
+#     root * /srv
+#     try_files {path} /index.html
+#     file_server
+#   }
+# }
