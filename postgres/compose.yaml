@@ -1,10 +1,10 @@
 services:
   postgres:
-    image: postgres:15.4
+    image: postgres:18.4
     restart: unless-stopped
     ports:
       - 5432:5432
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql
     environment:
       - POSTGRES_PASSWORD=123456

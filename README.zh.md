@@ -14,6 +14,7 @@ npx degit tlyboy/compose-starter/n8n n8n
 npx degit tlyboy/compose-starter/nginx nginx
 npx degit tlyboy/compose-starter/open-webui open-webui
 npx degit tlyboy/compose-starter/open-webui-cuda open-webui
+npx degit tlyboy/compose-starter/postgres postgres
 npx degit tlyboy/compose-starter/redis redis
 npx degit tlyboy/compose-starter/verdaccio verdaccio
 ```
