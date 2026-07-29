@@ -1,7 +1,13 @@
 services:
   open-webui:
+    image: ghcr.io/open-webui/open-webui:cuda
+    container_name: open-webui
     ports:
       - 3000:8080
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - open-webui:/app/backend/data
     deploy:
       resources:
         reservations:
@@ -10,10 +16,6 @@ services:
               count: all
               capabilities:
                 - gpu
-    volumes:
-      - open-webui:/app/backend/data
-    container_name: open-webui
-    image: ghcr.io/open-webui/open-webui:cuda
 
 volumes:
   open-webui:

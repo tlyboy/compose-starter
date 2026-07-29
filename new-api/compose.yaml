@@ -2,7 +2,7 @@ services:
   new-api:
     image: calciumion/new-api:latest
     container_name: new-api
-    restart: always
+    restart: unless-stopped
     command: --log-dir /app/logs
     ports:
       - '3000:3000'
