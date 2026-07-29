@@ -1,0 +1,23 @@
+services:
+  new-api:
+    image: calciumion/new-api:latest
+    container_name: new-api
+    restart: always
+    command: --log-dir /app/logs
+    ports:
+      - '3000:3000'
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    environment:
+      - SQL_DSN=postgresql://postgres:123456@host.docker.internal:5432/new-api # ⚠️ IMPORTANT: Change the password in production!
+      #      - SQL_DSN=root:123456@tcp(mysql:3306)/new-api  # Point to the mysql service, uncomment if using MySQL
+      - REDIS_CONN_STRING=redis://:123456@host.docker.internal:6379
+      - TZ=Asia/Singapore
+      - ERROR_LOG_ENABLED=true # 是否启用错误日志记录
+      - BATCH_UPDATE_ENABLED=true # 是否启用批量更新 batch update enabled
+    #      - STREAMING_TIMEOUT=300  # 流模式无响应超时时间，单位秒，默认120秒，如果出现空补全可以尝试改为更大值 Streaming timeout in seconds, default is 120s. Increase if experiencing empty completions
+    #      - SESSION_SECRET=random_string  # 多机部署时设置，必须修改这个随机字符串！！ multi-node deployment, set this to a random string!!!!!!!
+    #      - SYNC_FREQUENCY=60  # 缓存同步频率；独立 Redis 部署下也是 Session 最大陈旧窗口

@@ -11,6 +11,7 @@ npx degit tlyboy/compose-starter/caddy-ali caddy
 npx degit tlyboy/compose-starter/caddy-cf caddy
 npx degit tlyboy/compose-starter/mysql mysql
 npx degit tlyboy/compose-starter/n8n n8n
+npx degit tlyboy/compose-starter/new-api new-api
 npx degit tlyboy/compose-starter/nginx nginx
 npx degit tlyboy/compose-starter/open-webui open-webui
 npx degit tlyboy/compose-starter/open-webui-cuda open-webui

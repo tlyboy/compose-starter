@@ -5,6 +5,8 @@ services:
     ports:
       - '8443:8443'
       - '8443:8443/udp'
+    extra_hosts:
+      - host.docker.internal:host-gateway
     volumes:
       - ./conf:/etc/caddy
       - ./site:/srv
